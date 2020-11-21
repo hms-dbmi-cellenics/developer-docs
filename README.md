@@ -1,7 +1,8 @@
 Biomage Developer Guide
 ==
 
-Want to code up a new feature or fix an existing bug? 
+Want to code up a new feature or fix an existing bug? Or learn more about
+this project?
 In this repo we keep all documentation that will help you to get started.
 
 Go to [wiki](https://github.com/biomage-ltd/kb/wiki) page for contents and
