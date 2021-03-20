@@ -1,12 +1,10 @@
-Biomage Developer Guide
-==
+Cellscope Developer Documentation
+=================================
 
-Want to code up a new feature or fix an existing bug? Or learn more about
-this project?
-In this repo we keep all documentation that will help you to get started.
+Welcome to the developer documentation for Biomage Cellscope.
 
-Go to [wiki](https://github.com/biomage-ltd/kb/wiki) page for contents and
-more information.
+Popular questions
+-----------------
 
-**For project-specific information:** Please read the README files in
-each repository for specific information on how to set up/run an application.
+* __How do I make infrastructure changes?__ We have an [infrastructure directory](https://github.com/biomage-ltd/developer-docs/wiki/Infrastructure#directory) in place to find where to find and how to edit configuration files related to infrastructure
+* __I have trouble running a particular application in this organization, what do I do?__ Please read the README files in each repository for specific information on how to set up and run an application.
