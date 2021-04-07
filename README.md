@@ -3,6 +3,17 @@ Cellscope Developer Documentation
 
 Welcome to the developer documentation for Biomage Cellscope.
 
+
+Getting Started
+---------------
+
+If you are on MacOS you can install all the dependencies running (only minor changes are needed for Linux):
+
+    install.sh
+
+The script will also clone the required repositories to run Biomage Cellscope. Go to `api/README.md` for detailed instructions on how to set up and run the platform.
+
+
 Popular questions
 -----------------
 
