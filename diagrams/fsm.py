@@ -120,29 +120,45 @@ def init_diagram_resources(nodes, env):
         if node[attrs][resource] == dynamo:
             resources[node[name]] = Dynamodb(node[name])
 
-        # create the processes that read / write the resource
-        for proc in node[attrs][readby].split(",") + node[attrs][writtenby].split(","):
-            if proc not in resources:
-                resources[proc] = General(proc)
+        # # create the processes that read / write the resource
+        # for proc in node[attrs][readby].split(",") + node[attrs][writtenby].split(","):
+        #     if proc not in resources:
+        #         resources[proc] = General(proc)
 
     return resources
 
 
+def find_resources(resources, edge_name, direction=readby):
+    results = []
+    for node in nodes:
+        if resource in node[attrs] and edge_name in node[attrs][direction].split(","):
+            results.append(resources[node[name]])
+    return results        
+        
 def create_edges(nodes, resources):
+    edges = set()
     for node in nodes:
         if resource not in node[attrs]:
             print("skipping node %s because it's an empty resource" % (node[name]))
             continue
+        for proc in node[attrs][readby].split(",") + node[attrs][writtenby].split(","):
+            edges.add(proc)
+    
+    while edge := edges.pop():
+        input_nodes = find_resources(resources, edge, readby)
+        output_nodes = find_resources(resources, edge, writtenby)
 
-        # create the read by edges
-        for proc in node[attrs][readby].split(","):
-            resources[proc] >> resources[node[name]]
+        if len(input_nodes) < 1:
+            input_nodes = [General("")]
+        if len(output_nodes) < 1:
+            output_nodes = General("")
+        for n in input_nodes:        
+            n >> Edge(label=edge) >> output_nodes
 
-        for proc in node[attrs][writtenby].split(","):
-            resources[proc] << resources[node[name]]
-       
+    
 
 nodes = parse_nodes('./data-flow.md')
+
 
 with Diagram("Data flows", show=False):
     with Cluster("staging"):
