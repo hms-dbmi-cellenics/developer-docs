@@ -3,6 +3,14 @@ Cellscope Developer Documentation
 
 Welcome to the developer documentation for Biomage Cellscope.
 
+
+
+Quickstart
+----------
+
+In order to get a working development environment run `./install-deps.sh` script. It will set up and install the dependencies and clone the required repositories.
+
+
 Popular questions
 -----------------
 
