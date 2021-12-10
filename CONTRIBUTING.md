@@ -1,3 +1,7 @@
+# Contributing to Cellenics
+Thank you for your interest in contributing to Cellenics! We welcome all people who want to contribute in a healthy and constructive manner within our community. To help us create a safe and positive community experience for all, we require all participants to adhere to the [Code of Conduct](CODE_OF_CONDUCT.md).
+
+
 ## Where to start
 1. Choosing what to work on.
 
