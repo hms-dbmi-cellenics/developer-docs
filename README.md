@@ -1,6 +1,6 @@
 Cellenics Documentation
 =================================
-Welcome to the documentation for Cellenics -- a cloud-based open source web platform for single cell RNA sequencing data analysis. It allows anyone to easily turn their big datasets into meaningful biology and make discoveries, free of charge. The core contributors are a [team](https://www.biomage.net/our-team) of mission oriented software engineers, bioinformaticians and researchers who are trying to accelerate scientific research with the aim of improving human health.
+Welcome to the documentation for Cellenics: a cloud-based open source web platform for single cell RNA sequencing data analysis developed by Harvard Medical School. Cellenics allows anyone to easily turn their big datasets into meaningful biology and make discoveries, free of charge. The core contributors are a [team](https://www.biomage.net/our-team) of mission oriented software engineers, bioinformaticians and researchers at Biomage and Harvard.
 
 Get Started
 ----------
