@@ -15,6 +15,7 @@ Contributing
 ----------
 If you are interested in contributing to the Cellenics platform:
 
-- Learn how to set up your local environment. Follow the instructions on our [development setup wiki page](https://github.com/biomage-ltd/developer-docs/wiki/Cellenics-Development---Setup)
-- Explore our issues in our [Trello board with user requests](https://trello.com/b/zPaytPFR/usability-studies). The ones with label "beginner-friendly" will be best candidates for picking up.
+- Read the [Contributors Guide](https://github.com/biomage-ltd/developer-docs/wiki/Contributors-Guide).
+- Learn how to set up your local environment, explained in the [Development Setup wiki page](https://github.com/biomage-ltd/developer-docs/wiki/Cellenics-Development---Setup)
+- Explore our [Trello board with user requests](https://trello.com/b/zPaytPFR/usability-studies). The ones with label "beginner-friendly" will be best candidates for picking up.
 - Drop a message to engineering@biomage.net who will be happy to guide you through any problems with the setup or helping you choose your first task.
