@@ -18,7 +18,7 @@ How exciting, we want to hear more! Create a new card for this in our board: [Tr
 ## Definition of D.O.N.E.
 
 In order for a change to be considered as done, it has to comply with all of the items below:
-1. The changes are tested end to end using [inframock](https://github.com/biomage-ltd/inframock). Everything works as expected and the changes implement all requirements listed in the issue. 
+1. The changes are tested end to end using [inframock](https://github.com/hms-dbmi-cellenics/inframock). Everything works as expected and the changes implement all requirements listed in the issue. 
 2. Code passes existing unit tests and CI checks.
 3. There are unit tests added to test the new functionality.
 4. Where relevant, operational and developer documentation is updated.
@@ -33,12 +33,12 @@ Your change works and complies with the points [1-4] from the definition of Done
 ## Development Environment
 The following versions of runtime and programming languages are currently used on our development (as of 10 Dec 2021) : 
 
-- Python 3.8 - [worker](https://github.com/biomage-ltd/worker)
-- R 4.0.5 - [worker](https://github.com/biomage-ltd/worker) and [pipeline](https://github.com/biomage-ltd/pipeline)
-- Node 14.18.1 - [API](https://github.com/biomage-ltd/api) and [UI](https://github.com/biomage-ltd/ui)
+- Python 3.8 - [worker](https://github.com/hms-dbmi-cellenics/worker)
+- R 4.0.5 - [worker](https://github.com/hms-dbmi-cellenics/worker) and [pipeline](https://github.com/hms-dbmi-cellenics/pipeline)
+- Node 14.18.1 - [API](https://github.com/hms-dbmi-cellenics/api) and [UI](https://github.com/hms-dbmi-cellenics/ui)
 
 Popular questions
 -----------------
-* __How do I stage an environment?__ Very easy! We have a command for that. It is all explained in the [biomage-utils](https://github.com/biomage-ltd/biomage-utils) repository.
-* __How do I make infrastructure changes?__ We have an [infrastructure directory](https://github.com/biomage-ltd/developer-docs/blob/master/INFRASTRUCTURE.md#directory) in place to find where to find and how to edit configuration files related to infrastructure
+* __How do I stage an environment?__ Very easy! We have a command for that. It is all explained in the [biomage-utils](https://github.com/hms-dbmi-cellenics/biomage-utils) repository.
+* __How do I make infrastructure changes?__ We have an [infrastructure directory](https://github.com/hms-dbmi-cellenics/developer-docs/blob/master/INFRASTRUCTURE.md#directory) in place to find where to find and how to edit configuration files related to infrastructure
 * __I have trouble running a particular application in this organization, what do I do?__ Talk to us, we would love to help! You can reach us on engineering@biomage.net. We will reply as soon as we can :)
