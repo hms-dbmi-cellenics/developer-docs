@@ -104,8 +104,8 @@ else
 fi
 
 # Clone biomage repositories
-DEFAULT_BIOMAGE_HOME=${HOME}/github.com/biomage-ltd/
-BASE_REPO_SSH="git@github.com:biomage-ltd"
+DEFAULT_BIOMAGE_HOME=${HOME}/github.com/hms-dbmi-cellenics/
+BASE_REPO_SSH="git@github.com:hms-dbmi-cellenics"
 
 printf "Enter desired path for biomage repositories [default: ${DEFAULT_BIOMAGE_HOME}]:\n"
 read biomage_home
