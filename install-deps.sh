@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This scripts install the dependencies needed to run Cellscope by Biomage and clones the repositories.
+# This scripts install the dependencies needed to run Cellenics by Biomage and clones the repositories.
 
 
 # log outputs the provided string with a timestamp

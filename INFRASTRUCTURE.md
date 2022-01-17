@@ -1,14 +1,14 @@
-Cellscope Infrastructure
+Cellenics Infrastructure
 ========================
 
-Biomage Cellscope is a single-cell RNA sequencing data analysis platform that is served in a Software-as-a-Service manner. As such, we use and embrace the [cloud-native](https://en.wikipedia.org/wiki/Cloud_native_computing) development paradigm in order to provide our users with a scalable, resilient, and highly available service to the greatest extent possible.
+Biomage Cellenics is a single-cell RNA sequencing data analysis platform that is served in a Software-as-a-Service manner. As such, we use and embrace the [cloud-native](https://en.wikipedia.org/wiki/Cloud_native_computing) development paradigm in order to provide our users with a scalable, resilient, and highly available service to the greatest extent possible.
 
 Design paradigms
 ----------------
 
 We try to abide by the a set of paradigms when designing Biomage infrastructure. You can see this reflected in the architecture we currently have as well as the direction in which future development goes. When designing a new piece of infrastructure for Biomage, we have found it easy to narrow down potential options by observing a few key considerations. Make sure you observe the following paradigms, in order from most to least important.
 
-The Cellscope technology stack should:
+The Cellenics technology stack should:
 
 * __be AWS-native__: Engineering work at Biomage is done by a small team of engineers, bioinformaticians, managers, and other professionals. We have really good in-house knowledge of Amazon Web Services. In order to scale a platform to the extent we want to, we need everyone to write code instead of managing complex infrastructure. As such, infrastructure should be native to AWS unless it is absolutely unavoidable. AWS has a rich set of native tools that should be suitable for most tasks. When multiple AWS-native tools meet requirements, choose the one that is fully managed and requires the least configuration. For example, prefer [DynamoDB](https://aws.amazon.com/dynamodb/) over[DocumentDB](https://aws.amazon.com/documentdb/).
 
@@ -23,9 +23,9 @@ The Cellscope technology stack should:
 Directory
 ---------
 
-Almost all of the Cellscope stack is managed using an [Infrastructure as Code](https://en.wikipedia.org/wiki/Infrastructure_as_code) paradigm. Resources are typically defined using configuration files that are modified in a pull request, and applied to the system using Continuous Deployment when the request is approved and merged. This serves as a resource for engineers looking to find the definitions to certain resources:
+Almost all of the Cellenics stack is managed using an [Infrastructure as Code](https://en.wikipedia.org/wiki/Infrastructure_as_code) paradigm. Resources are typically defined using configuration files that are modified in a pull request, and applied to the system using Continuous Deployment when the request is approved and merged. This serves as a resource for engineers looking to find the definitions to certain resources:
 
-### Deploying Cellscope
+### Deploying Cellenics
 
 Almost the entirety of Biomage can be brought up from scratch using Continuous Deployment. The action [Deploy Biomage infrastruture](https://github.com/hms-dbmi-cellenics/iac/actions/workflows/deploy-infra.yaml) is responsible for this task. This must be manually triggered by someone with administrator/root access to the cluster for any changes to be applied. Deploying is non-destructive and so can be done as much as desired.
 
@@ -41,7 +41,7 @@ Note: per the eksctl documentation, node groups are immutable. If you want to ch
 
 AWS resources, such as S3 buckets, SQS queues, SNS topics, DynamoDB tables, etc., are stored under [iac/cf/*](https://github.com/hms-dbmi-cellenics/iac/tree/master/cf) as [CloudFormation](https://aws.amazon.com/cloudformation/) files. All CloudFormation files must have a mandatory `Environment` parameter, which can be either `development`, `staging`, or `production`. Changes made to these files can be submitted as a PR. When they are merged in, a GitHub action under [iac/.github/workflows/deploy-changed-cf.yaml](https://github.com/hms-dbmi-cellenics/iac/blob/master/.github/workflows/deploy-changed-cf.yaml) deploys them to AWS on both environments. In addition, this action is also run in a dry-run mode when the merge request is created on any file under `iac/cf/*` to verify the file.
 
-There are also certain "stationary" AWS resources that cannot be managed in such a manner and a [re-deploy](#deploying-cellscope) is necessary. These are found under `iac/infra/cf-*.yaml`. This includes a secret key used to send sensitive information to GitHub Actions publicly at [iac/infra/cf-iac-secret-key.yaml](https://github.com/hms-dbmi-cellenics/iac/blob/master/infra/cf-iac-secret-key.yaml). These are deployed using steps created in [iac/.github/workflows/deploy-infra.yaml](https://github.com/hms-dbmi-cellenics/iac/blob/master/.github/workflows/deploy-infra.yaml) and as such changes to them need to be applied by [re-deploying](#deploying-cellscope) Cellscope.
+There are also certain "stationary" AWS resources that cannot be managed in such a manner and a [re-deploy](#deploying-Cellenics) is necessary. These are found under `iac/infra/cf-*.yaml`. This includes a secret key used to send sensitive information to GitHub Actions publicly at [iac/infra/cf-iac-secret-key.yaml](https://github.com/hms-dbmi-cellenics/iac/blob/master/infra/cf-iac-secret-key.yaml). These are deployed using steps created in [iac/.github/workflows/deploy-infra.yaml](https://github.com/hms-dbmi-cellenics/iac/blob/master/.github/workflows/deploy-infra.yaml) and as such changes to them need to be applied by [re-deploying](#deploying-Cellenics) Cellenics.
 
 ### AWS permissions for developers
 
@@ -61,9 +61,9 @@ Kubernetes has a different permissions system than AWS and the two interoperate 
 
 __For IAM users such as developers__: The files [iac/infra/cluster_admins_production](https://github.com/hms-dbmi-cellenics/iac/blob/master/infra/cluster_admins_production), [iac/infra/cluster_admins_staging](https://github.com/hms-dbmi-cellenics/iac/blob/master/infra/cluster_admins_staging), [iac/infra/cluster_users](https://github.com/hms-dbmi-cellenics/iac/blob/master/infra/cluster_users) contain names on each line of IAM users who have respective rights on the cluster. These files can be modified and a PR raised for them. Note: the file must end with a newline character.
 
-When approved, Cellscope must be [re-deployed](#deploying-cellscope). As seen in that directory entry, the GitHub action under [iac/.github/workflows/deploy-infra.yaml](https://github.com/hms-dbmi-cellenics/iac/blob/master/.github/workflows/deploy-infra.yaml) is deployed, where steps `update-identitymapping-admin` and `update-identitymapping` deal with reading the files and adding these users to the list as administrators.
+When approved, Cellenics must be [re-deployed](#deploying-Cellenics). As seen in that directory entry, the GitHub action under [iac/.github/workflows/deploy-infra.yaml](https://github.com/hms-dbmi-cellenics/iac/blob/master/.github/workflows/deploy-infra.yaml) is deployed, where steps `update-identitymapping-admin` and `update-identitymapping` deal with reading the files and adding these users to the list as administrators.
 
-__For IAM roles such as AWS Step Function executions, EC2 instances, etc.__: Access to cluster can be managed by directly editing [iac/.github/workflows/deploy-infra.yaml](https://github.com/hms-dbmi-cellenics/iac/blob/master/.github/workflows/deploy-infra.yaml) and [re-deploying](#deploying-cellscope). See step `add-state-machine-role` that adds the IAM role `state-machine-role-[staging/production]` certain rights.
+__For IAM roles such as AWS Step Function executions, EC2 instances, etc.__: Access to cluster can be managed by directly editing [iac/.github/workflows/deploy-infra.yaml](https://github.com/hms-dbmi-cellenics/iac/blob/master/.github/workflows/deploy-infra.yaml) and [re-deploying](#deploying-Cellenics). See step `add-state-machine-role` that adds the IAM role `state-machine-role-[staging/production]` certain rights.
 
 ### Docker images
 
