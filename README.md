@@ -5,7 +5,7 @@ Welcome to the documentation for Cellenics: a cloud-based open source web platfo
 Get Started
 ----------
 
-- [Try Cellenics out](https://scp.biomage.net/)
+- Try the [Cellenics community instance](https://scp.biomage.net/) out.
 
 Documentation
 ----------
