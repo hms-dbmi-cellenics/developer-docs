@@ -24,7 +24,10 @@ if [ $? -eq 0 ]; then
 	printf "$green ok$reset\n"
 else
 	printf "$red not found, please install:$reset\n"
-	log "\tcurl -o ~/Downloads/Docker.dmg https://download.docker.com/mac/stable/Docker.dmg && open ~/Downloads/Docker.dmg\n"
+	# This is for Intel chip
+	log "\tcurl -o ~/Downloads/Docker.dmg https://desktop.docker.com/mac/main/amd64/Docker.dmg && open ~/Downloads/Docker.dmg\n"
+	# Switch to this if the previous doesn't work. This is for Apple chip
+	# log "\tcurl -o ~/Downloads/Docker.dmg https://desktop.docker.com/mac/main/arm64/Docker.dmg && open ~/Downloads/Docker.dmg\n"
 	log "\n"
 	exit 1
 fi
