@@ -1,11 +1,6 @@
 Cellenics Documentation
 =================================
-Welcome to the documentation for Cellenics: a cloud-based open source web platform for single cell RNA sequencing data analysis initiated by Harvard Medical School. Cellenics allows anyone to easily turn their big datasets into meaningful biology and make discoveries, free of charge. The core contributors are a [team](https://www.biomage.net/our-team) of mission oriented software engineers, bioinformaticians and researchers at Biomage and Harvard.
-
-Get Started
-----------
-
-- Try the [Cellenics community instance](https://scp.biomage.net/) out.
+Welcome to the documentation for Cellenics: a cloud-based open source web platform for single cell RNA sequencing data analysis initiated by Harvard Medical School. Cellenics allows anyone to easily turn their big datasets into meaningful biology and make discoveries, free of charge. The core contributors are a [team](https://github.com/hms-dbmi-cellenics/governance/blob/master/maintainers.md) of mission oriented software engineers, bioinformaticians and researchers.
 
 Documentation
 ----------
@@ -17,5 +12,4 @@ If you are interested in contributing to the Cellenics platform:
 
 - Read the [Contributors Guide](CONTRIBUTING.md).
 - Learn how to set up your local environment, explained in the [Development Setup wiki page](https://github.com/hms-dbmi-cellenics/developer-docs/wiki/Cellenics-Development---Setup)
-- Explore our [Trello board with user requests](https://trello.com/b/zPaytPFR/usability-studies). The ones with label "beginner-friendly" will be best candidates for picking up.
-- Drop a message to iva@biomage.net who will be happy to guide you through any problems with the setup or helping you choose your first task.
+- Drop a message to alex_pickering@hms.harvard.edu who will be happy to guide you through any problems with the setup or helping you choose your first task.
